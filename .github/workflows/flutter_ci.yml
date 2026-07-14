@@ -30,7 +30,7 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.32.x'   # pin to a stable channel; bump as needed
+          flutter-version: '3.44.x'   # Dart 3.10+ required by sdk: ^3.10.1
           channel: 'stable'
           cache: true
 
@@ -63,7 +63,7 @@ jobs:
     needs: analyze           # only build if analysis passes
 
     env:
-      FLUTTER_VERSION: '3.32.x'
+      FLUTTER_VERSION: '3.44.x'
 
     steps:
       - name: Checkout repository
