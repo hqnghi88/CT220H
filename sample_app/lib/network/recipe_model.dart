@@ -31,9 +31,7 @@ class APIRecipeQuery {
 class APIHits {
   APIRecipe recipe;
 
-  APIHits({
-    required this.recipe,
-  });
+  APIHits({required this.recipe});
 
   factory APIHits.fromJson(Map<String, dynamic> json) =>
       _$APIHitsFromJson(json);
@@ -73,10 +71,7 @@ class APIIngredients {
   String name;
   double weight;
 
-  APIIngredients({
-    required this.name,
-    required this.weight,
-  });
+  APIIngredients({required this.name, required this.weight});
 
   factory APIIngredients.fromJson(Map<String, dynamic> json) =>
       _$APIIngredientsFromJson(json);

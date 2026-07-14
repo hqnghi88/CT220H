@@ -74,26 +74,38 @@ class _MainScreenState extends State<MainScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: [
           BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/icon_recipe.svg',
-                  colorFilter: ColorFilter.mode(
-                      _selectedIndex == 0 ? green : Colors.grey,
-                      BlendMode.srcIn),
-                  semanticsLabel: 'Recipes'),
-              label: 'Recipes'),
+            icon: SvgPicture.asset(
+              'assets/images/icon_recipe.svg',
+              colorFilter: ColorFilter.mode(
+                _selectedIndex == 0 ? green : Colors.grey,
+                BlendMode.srcIn,
+              ),
+              semanticsLabel: 'Recipes',
+            ),
+            label: 'Recipes',
+          ),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/icon_bookmarks.svg',
-                  colorFilter: ColorFilter.mode(
-                      _selectedIndex == 1 ? green : Colors.grey,
-                      BlendMode.srcIn),
-                  semanticsLabel: 'Bookmarks'),
-              label: 'Bookmarks'),
+            icon: SvgPicture.asset(
+              'assets/images/icon_bookmarks.svg',
+              colorFilter: ColorFilter.mode(
+                _selectedIndex == 1 ? green : Colors.grey,
+                BlendMode.srcIn,
+              ),
+              semanticsLabel: 'Bookmarks',
+            ),
+            label: 'Bookmarks',
+          ),
           BottomNavigationBarItem(
-              icon: SvgPicture.asset('assets/images/icon_shopping_list.svg',
-                  colorFilter: ColorFilter.mode(
-                      _selectedIndex == 2 ? green : Colors.grey,
-                      BlendMode.srcIn),
-                  semanticsLabel: 'Groceries'),
-              label: 'Groceries'),
+            icon: SvgPicture.asset(
+              'assets/images/icon_shopping_list.svg',
+              colorFilter: ColorFilter.mode(
+                _selectedIndex == 2 ? green : Colors.grey,
+                BlendMode.srcIn,
+              ),
+              semanticsLabel: 'Groceries',
+            ),
+            label: 'Groceries',
+          ),
         ],
         currentIndex: _selectedIndex,
         selectedItemColor: green,
@@ -115,13 +127,13 @@ class _MainScreenState extends State<MainScreen> {
         title: Text(
           title,
           style: const TextStyle(
-              fontSize: 20, fontWeight: FontWeight.w500, color: Colors.black),
+            fontSize: 20,
+            fontWeight: FontWeight.w500,
+            color: Colors.black,
+          ),
         ),
       ),
-      body: IndexedStack(
-        index: _selectedIndex,
-        children: pageList,
-      ),
+      body: IndexedStack(index: _selectedIndex, children: pageList),
     );
   }
 }

@@ -16,21 +16,22 @@ class _ShoppingListState extends State<ShoppingList> {
   Widget build(BuildContext context) {
     // TODO 2
     return ListView.builder(
-        itemCount: ingredients.length,
-        itemBuilder: (BuildContext context, int index) {
-          return CheckboxListTile(
-            value: checkBoxValues.containsKey(index) && checkBoxValues[index]!,
-            // TODO 3
-            title: Text(ingredients[index]),
-            onChanged: (newValue) {
-              if (newValue != null) {
-                setState(() {
-                  checkBoxValues[index] = newValue;
-                });
-              }
-            },
-          );
-        });
+      itemCount: ingredients.length,
+      itemBuilder: (BuildContext context, int index) {
+        return CheckboxListTile(
+          value: checkBoxValues.containsKey(index) && checkBoxValues[index]!,
+          // TODO 3
+          title: Text(ingredients[index]),
+          onChanged: (newValue) {
+            if (newValue != null) {
+              setState(() {
+                checkBoxValues[index] = newValue;
+              });
+            }
+          },
+        );
+      },
+    );
     // TODO 4
   }
 }
