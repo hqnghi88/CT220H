@@ -1,63 +1,75 @@
-# Miscellaneous
-*.class
-*.lock
-*.log
-*.pyc
-*.swp
-.buildlog/
-.history
-
-
-
-# Flutter repo-specific
-/bin/cache/
-/bin/internal/bootstrap.bat
-/bin/internal/bootstrap.sh
-/bin/mingit/
-/dev/benchmarks/mega_gallery/
-/dev/bots/.recipe_deps
-/dev/bots/android_tools/
-/dev/devicelab/ABresults*.json
-/dev/docs/doc/
-/dev/docs/flutter.docs.zip
-/dev/docs/lib/
-/dev/docs/pubspec.yaml
-/dev/integration_tests/**/xcuserdata
-/dev/integration_tests/**/Pods
-/packages/flutter/coverage/
-version
-analysis_benchmark.json
-
-# packages file containing multi-root paths
-.packages.generated
-
-# Flutter/Dart/Pub related
-**/doc/api/
+# ==============================================================================
+# Flutter / Dart / Pub
+# ==============================================================================
+# Dart tool caches
 .dart_tool/
+.pub-cache/
+.pub/
+
+# Flutter generated files
 .flutter-plugins
 .flutter-plugins-dependencies
 **/generated_plugin_registrant.dart
-.packages
-.pub-preload-cache/
-.pub/
+
+# Build output
 build/
+**/doc/api/
+
+# Pub lockfile (keep pubspec.lock for apps, ignore for libraries)
+# pubspec.lock   ← intentionally kept for reproducible builds
+
+# Coverage & symbols
+coverage/
+app.*.symbols
+app.*.map.json
+
+# Misc
+*.class
+*.lock
+!pubspec.lock
+*.log
+*.pyc
+*.swp
+.packages
+.packages.generated
+.pub-preload-cache/
 flutter_*.png
 linked_*.ds
 unlinked.ds
 unlinked_spec.ds
+analysis_benchmark.json
 
-# Android related
-**/android/**/gradle-wrapper.jar
+# ==============================================================================
+# Android
+# ==============================================================================
+# Gradle build cache / wrapper binaries
 .gradle/
-**/android/captures/
+**/.gradle/
 **/android/gradlew
 **/android/gradlew.bat
-**/android/local.properties
-**/android/**/GeneratedPluginRegistrant.java
-**/android/key.properties
-*.jks
+**/android/**/gradle-wrapper.jar
 
-# iOS/XCode related
+# Signing secrets — NEVER commit keystores or key.properties
+*.jks
+*.keystore
+**/android/key.properties
+**/android/local.properties
+**/android/captures/
+
+# Generated Android sources
+**/android/**/GeneratedPluginRegistrant.java
+
+# Android Studio build artifacts
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Kotlin incremental compilation
+**/.kotlin/
+
+# ==============================================================================
+# iOS / Xcode
+# ==============================================================================
 **/ios/**/*.mode1v3
 **/ios/**/*.mode2v3
 **/ios/**/*.moved-aside
@@ -79,7 +91,7 @@ unlinked_spec.ds
 **/ios/Flutter/Flutter.framework
 **/ios/Flutter/Flutter.podspec
 **/ios/Flutter/Generated.xcconfig
-**/ios/Flutter/ephemeral
+**/ios/Flutter/ephemeral/
 **/ios/Flutter/app.flx
 **/ios/Flutter/app.zip
 **/ios/Flutter/flutter_assets/
@@ -87,33 +99,65 @@ unlinked_spec.ds
 **/ios/ServiceDefinitions.json
 **/ios/Runner/GeneratedPluginRegistrant.*
 
-# macOS
-**/Flutter/ephemeral/
-**/Pods/
-**/macos/Flutter/GeneratedPluginRegistrant.swift
-**/macos/Flutter/ephemeral
-**/xcuserdata/
-
-# Windows
-**/windows/flutter/generated_plugin_registrant.cc
-**/windows/flutter/generated_plugin_registrant.h
-**/windows/flutter/generated_plugins.cmake
-
-# Linux
-**/linux/flutter/generated_plugin_registrant.cc
-**/linux/flutter/generated_plugin_registrant.h
-**/linux/flutter/generated_plugins.cmake
-
-# Coverage
-coverage/
-
-# Symbols
-app.*.symbols
-
-# Exceptions to above rules.
+# Exceptions
 !**/ios/**/default.mode1v3
 !**/ios/**/default.mode2v3
 !**/ios/**/default.pbxuser
 !**/ios/**/default.perspectivev3
-!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
-!/dev/ci/**/Gemfile.lock
+
+# ==============================================================================
+# macOS
+# ==============================================================================
+**/Flutter/ephemeral/
+**/Pods/
+**/macos/Flutter/GeneratedPluginRegistrant.swift
+**/macos/Flutter/ephemeral/
+**/xcuserdata/
+
+# ==============================================================================
+# Windows
+# ==============================================================================
+**/windows/flutter/generated_plugin_registrant.cc
+**/windows/flutter/generated_plugin_registrant.h
+**/windows/flutter/generated_plugins.cmake
+
+# ==============================================================================
+# Linux
+# ==============================================================================
+**/linux/flutter/generated_plugin_registrant.cc
+**/linux/flutter/generated_plugin_registrant.h
+**/linux/flutter/generated_plugins.cmake
+
+# ==============================================================================
+# IDEs & editors
+# ==============================================================================
+# IntelliJ / Android Studio
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# VS Code (uncomment if you don't want to commit launch configs)
+# .vscode/
+
+# Xcode
+*.xcworkspace
+xcuserdata/
+
+# ==============================================================================
+# OS artefacts
+# ==============================================================================
+.DS_Store
+Thumbs.db
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# ==============================================================================
+# CI / Secrets (extra guard)
+# ==============================================================================
+*.env
+.env.*
+secrets/
